@@ -14,27 +14,18 @@ class Object:
         self.name = name
         self.portable = portable
 
-
-class Container(Object):
-    def __init__(self, parent, area, name, portable, inventory, closed, locked):
-        super().__init__(parent, area, name, portable)
-        self.inventory = inventory
-        self.closed = closed
-        self.locked = locked
-
-
 class Entity(Object):
-    def __init__(self, parent, name, portable, health, max_health, inventory, area):
-        super().__init__(parent, name, area, portable)
+    def __init__(self, parent, area, name, portable, health, max_health, inventory):
+        super().__init__(parent, area, name, portable)
         self.health = health
         self.max_health = max_health
         self.inventory = inventory
 
 
 class Player(Entity):
-    def __init__(self, parent, name, portable, position, health, max_health, inventory, area, visible_objects,
+    def __init__(self, parent, area, name, portable, position, health, max_health, inventory, visible_objects,
                  player_map, moved):
-        super().__init__(parent, name, portable, health, max_health, inventory, area)
+        super().__init__(parent, area, name, portable, health, max_health, inventory)
         self.visible_objects = visible_objects
         self.player_map = player_map
         self.moved = moved

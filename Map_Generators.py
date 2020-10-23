@@ -74,10 +74,7 @@ def tile_generator(area_maps):
         area_maps.map.append([])
         for x in area_maps.map:
             for x_no in range(area_maps.max_x):
-                area_maps.map[x].append(0)
-
-
-
+                x.append(0)
 
 
 area_generator('world_name')

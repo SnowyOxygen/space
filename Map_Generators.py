@@ -70,11 +70,11 @@ def area_generator(maps_world):
 
 
 def tile_generator(area_maps):
+    no_tile_list = []
+    for x in range(area_maps.max_x):
+        no_tile_list.append(0)
     for y in range(area_maps.max_y):
-        area_maps.map.append([])
-        for x in area_maps.map:
-            for x_no in range(area_maps.max_x):
-                x.append(0)
+        area_maps.map.append(no_tile_list.copy())
 
 
 area_generator('world_name')
@@ -84,5 +84,7 @@ for ab in areas.values():
     for ac in ab.values():
         print(ac.name)
 
+print("------------")
 for a in areas['world_name'][(1, 1)].map:
     print(a)
+print(areas['world_name'][(1, 1)].map.name)
